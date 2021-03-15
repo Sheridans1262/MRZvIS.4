@@ -1,0 +1,11 @@
+[{"<Eating_time>k__BackingField":6.93676840464434,"<Number>k__BackingField":0,"<Philosophing_time>k__BackingField":2.3515331048292727},{"<Eating_time>k__BackingField":6.966213187187078,"<Number>k__BackingField":1,"<Philosophing_time>k__BackingField":3.398456604405519},{"<Eating_time>k__BackingField":5.642905074936759,"<Number>k__BackingField":2,"<Philosophing_time>k__BackingField":3.996146916410023},{"<Eating_time>k__BackingField":7.581242033085433,"<Number>k__BackingField":3,"<Philosophing_time>k__BackingField":4.0715648797673945},{"<Eating_time>k__BackingField":6.1797805964852595,"<Number>k__BackingField":4,"<Philosophing_time>k__BackingField":2.3589327029692626}]
+    <Eating_time>6.4624914929561745</Eating_time>
+    <Philosophing_time>5.324022731894638</Philosophing_time>
+    <Number>3</Number>
+  </Philosopher>
+  <Philosopher>
+    <Eating_time>6.546508870807713</Eating_time>
+    <Philosophing_time>5.074710452963929</Philosophing_time>
+    <Number>4</Number>
+  </Philosopher>
+</ArrayOfPhilosopher>

@@ -1,0 +1,13 @@
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.exe
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.deps.json
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.runtimeconfig.json
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.runtimeconfig.dev.json
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.dll
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\bin\Debug\netcoreapp3.1\CSharpTest.pdb
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.csprojAssemblyReference.cache
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.AssemblyInfoInputs.cache
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.AssemblyInfo.cs
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.csproj.CoreCompileInputs.cache
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.dll
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.pdb
+C:\Users\Spon'k\source\repos\CSharpTest\CSharpTest\obj\Debug\netcoreapp3.1\CSharpTest.genruntimeconfig.cache
