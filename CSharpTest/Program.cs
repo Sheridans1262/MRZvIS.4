@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
-using System.Text.Json;
 
 namespace CSharpTest
 {
     class Program
     {
-        static Semaphore sem = new Semaphore(5, 5);
-        //static int count = 5;
+        static Semaphore fork = new Semaphore(5, 5);
 
         static void Main(string[] args)
         {
@@ -29,10 +26,6 @@ namespace CSharpTest
                 thrs.Add(new Thread(new ParameterizedThreadStart(PhilFunc)));
                 thrs[i].Start(philosophers[i]);
             }
-
-            /*File.WriteAllText("Philosophers.json", JsonSerializer.Serialize(philosophers));
-            List<Philosopher> philosNew =  JsonSerializer.Deserialize<List<Philosopher>>(File.ReadAllText("Philosophers.json"));
-            Console.WriteLine(philosNew[0].Eating_time);*/
         }
 
         private static void PhilFunc(object obj)
@@ -41,20 +34,20 @@ namespace CSharpTest
 
             while(true)
             {
-                sem.WaitOne();
-                sem.WaitOne();
-
-                Console.WriteLine($"{philosopher.Number} philosopher philosophing.");
-                Thread.Sleep((int)philosopher.Philosophing_time * 1000);
-
-                sem.Release();
-                sem.Release();
+                fork.WaitOne();
+                fork.WaitOne();
 
                 Console.WriteLine($"{philosopher.Number} philosopher eating.");
                 Thread.Sleep((int)philosopher.Eating_time * 1000);
 
-                Console.WriteLine($"{philosopher.Number} philosopher is hungry.");
+                Console.WriteLine($"{philosopher.Number} philosopher philosophing.");
 
+                fork.Release();
+                fork.Release();
+                
+                Thread.Sleep((int)philosopher.Philosophing_time * 1000);
+
+                Console.WriteLine($"{philosopher.Number} philosopher is hungry.");
             }
         }
     }
