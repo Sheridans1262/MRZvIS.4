@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IQAIyS0TAc/MK/SZqJ4jxgCq31TmHamWUdDw8oNHYrcvW+LaQSwadXHFTeMNrdL6/Ub+33LRH83t/c7RzHjDUg==",
+  "dgSpecHash": "g18jYyhoGS9TKhbCC0Z5aWh0FZ63Xg4dSM+UO159FkuGuEEE3rdtt2Q4/eOV7MZdHZnFFps7dm1O6MHiKb2D6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Spon'k\\source\\repos\\CSharpTest\\CSharpTest\\CSharpTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Spon'k\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }
