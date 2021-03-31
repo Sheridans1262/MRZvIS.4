@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-//using System.Windows.Forms;
 
 namespace CSharpTest
 {
@@ -10,6 +9,13 @@ namespace CSharpTest
         static Semaphore fork = new Semaphore(5, 5);
 
         static void Main(string[] args)
+        {
+            List<Philosopher> philosophers = PhilosophersBirth();
+
+            ThreadInit(philosophers, fork);
+        }
+
+        private static List<Philosopher> PhilosophersBirth()
         {
             Random rnd = new Random();
 
@@ -21,35 +27,25 @@ namespace CSharpTest
                                                 i));
             }
 
+            return philosophers;
+        }
+
+        private static void ThreadInit(List<Philosopher> philosophers, Semaphore fork)
+        {
             List<Thread> thrs = new List<Thread>();
+
             for (int i = 0; i < 5; i++)
             {
-                thrs.Add(new Thread(new ParameterizedThreadStart(PhilFunc)));
+                thrs.Add(new Thread(new ParameterizedThreadStart(Cycle)));
                 thrs[i].Start(philosophers[i]);
             }
         }
 
-        private static void PhilFunc(object obj)
+        private static void Cycle(object obj)
         {
             Philosopher philosopher = (Philosopher)obj;
-
-            while(true)
-            {
-                fork.WaitOne();
-                fork.WaitOne();
-
-                Console.WriteLine($"{philosopher.Number} philosopher eating.");
-                Thread.Sleep((int)philosopher.Eating_time * 1000);
-
-                Console.WriteLine($"{philosopher.Number} philosopher philosophing.");
-
-                fork.Release();
-                fork.Release();
-                
-                Thread.Sleep((int)philosopher.Philosophing_time * 1000);
-
-                Console.WriteLine($"{philosopher.Number} philosopher is hungry.");
-            }
+            
+            philosopher.MainCycle(fork);
         }
     }
 }

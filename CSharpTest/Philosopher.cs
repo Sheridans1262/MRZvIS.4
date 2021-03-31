@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Threading;
 
 namespace CSharpTest
 {
-    [Serializable]
     public class Philosopher
     {
         public double Eating_time { get; set; }
@@ -14,6 +14,38 @@ namespace CSharpTest
             Eating_time = eating_time;
             Philosophing_time = philosophing_time;
             Number = number + 1;
+        }
+
+        public void MainCycle(Semaphore fork)
+        {
+            while (true)
+            {
+                fork.WaitOne();
+                fork.WaitOne();
+
+                EatingTime();
+
+                fork.Release();
+                fork.Release();
+
+                PhilosophingTime();
+            }
+        }
+
+        public void EatingTime()
+        {
+            Console.WriteLine($"{Number} philosopher eating.");
+
+            Thread.Sleep((int)Eating_time * 1000);
+        }
+
+        public void PhilosophingTime()
+        {
+            Console.WriteLine($"{Number} philosopher philosophing.");
+
+            Thread.Sleep((int)Philosophing_time * 1000);
+
+            Console.WriteLine($"{Number} philosopher is hungry.");
         }
     }
 }
