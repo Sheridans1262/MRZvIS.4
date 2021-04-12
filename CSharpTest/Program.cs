@@ -60,27 +60,5 @@ namespace CSharpTest
             
             philosopher.MainCycle(fork, accessor);
         }
-
-
-
-
-        private static void Filing()
-        {
-            using (var mmFile = MemoryMappedFile.CreateFromFile(
-                @"C:\Users\Spon'k\source\repos\MRZvIS.4\MRZvIS.4.4\test.txt",
-                System.IO.FileMode.Create, "fileHandle", 1024 * 1024))
-            {
-                string valueToWrite = "MMF writing " + DateTime.Now.ToString();
-                var myAccessor = mmFile.CreateViewAccessor();
-
-                myAccessor.WriteArray(0,
-                    Encoding.ASCII.GetBytes(valueToWrite), 0, valueToWrite.Length);
-                var readOut = new byte[valueToWrite.Length];
-                myAccessor.ReadArray(0, readOut, 0, readOut.Length);
-                var finalValue = Encoding.ASCII.GetString(readOut);
-                Console.WriteLine("Message: " + finalValue);
-                Console.ReadLine();
-            }
-        }
     }
 }
