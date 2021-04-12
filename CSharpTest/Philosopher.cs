@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.IO.MemoryMappedFiles;
 
 namespace CSharpTest
 {
@@ -16,12 +17,15 @@ namespace CSharpTest
             Number = number + 1;
         }
 
-        public void MainCycle(Semaphore fork)
+
+        public void MainCycle(SemaphoreSlim fork, MemoryMappedViewAccessor accessor)
         {
             while (true)
             {
-                fork.WaitOne();
-                fork.WaitOne();
+                accessor.Write(0, fork.CurrentCount);
+
+                fork.Wait();
+                fork.Wait();
 
                 EatingTime();
 
